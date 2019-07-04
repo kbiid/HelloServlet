@@ -20,9 +20,59 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-			<version>3.1.0</version>
+			<version>4.0.1</version>
 			<scope>provided</scope>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.4.2.Final</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.vibur/vibur-dbcp -->
+		<dependency>
+			<groupId>org.vibur</groupId>
+			<artifactId>vibur-dbcp</artifactId>
+			<version>22.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.vibur/vibur-object-pool -->
+		<dependency>
+			<groupId>org.vibur</groupId>
+			<artifactId>vibur-object-pool</artifactId>
+			<version>22.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.vibur/vibur-dbcp-hibernate5 -->
+		<dependency>
+			<groupId>org.vibur</groupId>
+			<artifactId>vibur-dbcp-hibernate5</artifactId>
+			<version>21.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.googlecode.concurrentlinkedhashmap/concurrentlinkedhashmap-lru -->
+		<dependency>
+			<groupId>com.googlecode.concurrentlinkedhashmap</groupId>
+			<artifactId>concurrentlinkedhashmap-lru</artifactId>
+			<version>1.4.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client -->
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.mindrot/jbcrypt -->
+		<dependency>
+			<groupId>org.mindrot</groupId>
+			<artifactId>jbcrypt</artifactId>
+			<version>0.4</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<finalName>HelloServlet</finalName>

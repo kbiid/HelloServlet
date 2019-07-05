@@ -26,7 +26,7 @@ public class ConfigReader {
 		return properties.get("admin.id").toString();
 	}
 
-	public String getAdminPwd() {
+	public String getAdminPasswd() {
 		if (properties == null || !properties.containsKey("admin.passwd")) {
 			throw new NullPointerException("properties가 null이거나 admin.passwd키가 없습니다.");
 		}

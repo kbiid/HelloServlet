@@ -14,7 +14,7 @@ import kr.co.torpedo.helloservlet.repository.hibernate.HibernateRepository;
 
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 3755421297984377453L;
-	private Admin manager;
+	private Admin admin;
 	private ConfigReader reader;
 	private HibernateRepository repository;
 
@@ -22,7 +22,9 @@ public class LoginServlet extends HttpServlet {
 	public void init() throws ServletException {
 		repository = new HibernateRepository();
 		reader = new ConfigReader();
-		manager = repository.selectManager(reader.getAdminId());
+		admin = new Admin();
+		admin.setId(reader.getAdminId());
+		admin.setPasswd(reader.getAdminPasswd());
 	}
 
 	@Override
@@ -46,7 +48,7 @@ public class LoginServlet extends HttpServlet {
 			dispatcher.forward(req, resp);
 		} else {
 			try {
-				boolean check = manager.checkAdminInfo(id, pwd);
+				boolean check = admin.checkAdminInfo(id, pwd);
 				if (check) { // 로그인 성공
 					req.setAttribute("userList", repository.selectUserList());
 					dispatcher = req.getRequestDispatcher("/viewUserList.jsp");

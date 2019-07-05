@@ -20,12 +20,12 @@ public class HibernateRepository {
 		sessionFactory = HibernateConnectionFactory.getSessionFactory();
 	}
 
-	public Admin selectManager(String id) {
+	public Admin selectAdmin(String id) {
 		session = sessionFactory.openSession();
-		Admin manager = (Admin) session.get(Admin.class, id);
+		Admin admin = (Admin) session.get(Admin.class, id);
 		session.close();
 
-		return manager;
+		return admin;
 	}
 
 	public List<User> selectUserList() {
@@ -40,13 +40,13 @@ public class HibernateRepository {
 		return list;
 	}
 
-	public void insert(Admin manager) {
-		if (selectManager(manager.getId()) != null) {
+	public void insert(Admin admin) {
+		if (selectAdmin(admin.getId()) != null) {
 			return;
 		}
 		session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
-		session.save(manager);
+		session.save(admin);
 		tx.commit();
 		session.close();
 	}

@@ -10,8 +10,8 @@ import javax.persistence.Table;
 import org.mindrot.jbcrypt.BCrypt;
 
 @Entity
-@Table(name = "manager")
-public class Manager {
+@Table(name = "admin")
+public class Admin {
 	@Id
 	@Column(name = "id", columnDefinition = "varchar(100)")
 	private String id;
@@ -34,7 +34,7 @@ public class Manager {
 		this.pwd = pwd;
 	}
 
-	public boolean checkManager(String id, String passwd) throws NoSuchAlgorithmException {
+	public boolean checkAdmin(String id, String passwd) throws NoSuchAlgorithmException {
 		if (!this.id.equals(id) || !BCrypt.checkpw(passwd, pwd)) {
 			return false;
 		}

@@ -9,37 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.mindrot.jbcrypt.BCrypt;
-
-import kr.co.torpedo.helloservlet.domain.Manager;
+import kr.co.torpedo.helloservlet.domain.Admin;
 import kr.co.torpedo.helloservlet.repository.hibernate.HibernateRepository;
 
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 3755421297984377453L;
+	private Admin manager;
 	private ConfigReader reader;
-	private Manager manager;
 	private HibernateRepository repository;
 
 	@Override
 	public void init() throws ServletException {
 		repository = new HibernateRepository();
 		reader = new ConfigReader();
-		reader.setManagerId("kbiid");
-		reader.setManagerPwd(hash("1234"));
-		try {
-			reader.store();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		manager = new Manager();
-		manager.setId(reader.getManagerId());
-		manager.setPwd(reader.getManagerPwd());
-	}
-
-	public String hash(String message) {
-		String sha = BCrypt.hashpw(message, BCrypt.gensalt());
-		return sha;
+		manager = repository.selectManager(reader.getManagerId());
 	}
 
 	@Override
@@ -53,17 +36,17 @@ public class LoginServlet extends HttpServlet {
 		String id = req.getParameter("id");
 		String pwd = req.getParameter("passwd");
 
-		if (id == "") { //아이디를 입력하지 않았을 경우
+		if (id == "") { // 아이디를 입력하지 않았을 경우
 			dispatcher = req.getRequestDispatcher("/");
 			req.setAttribute("errormsg", "아이디를 입력해 주세요!");
 			dispatcher.forward(req, resp);
-		} else if (pwd == "") { //비밀번호를 입력하지 않았을 경우
+		} else if (pwd == "") { // 비밀번호를 입력하지 않았을 경우
 			dispatcher = req.getRequestDispatcher("/");
 			req.setAttribute("errormsg", "비밀번호를 입력해 주세요!");
 			dispatcher.forward(req, resp);
 		} else {
 			try {
-				boolean check = manager.checkManager(id, pwd);
+				boolean check = manager.checkAdmin(id, pwd);
 				if (check) { // 로그인 성공
 					req.setAttribute("userList", repository.selectUserList());
 					dispatcher = req.getRequestDispatcher("/viewUserList.jsp");

@@ -22,7 +22,7 @@ public class LoginServlet extends HttpServlet {
 	public void init() throws ServletException {
 		repository = new HibernateRepository();
 		reader = new ConfigReader();
-		manager = repository.selectManager(reader.getManagerId());
+		manager = repository.selectManager(reader.getAdminId());
 	}
 
 	@Override

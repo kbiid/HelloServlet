@@ -19,17 +19,17 @@ public class ConfigReader {
 		}
 	}
 
-	public String getManagerId() {
-		if (properties == null || !properties.containsKey("manager.id")) {
-			throw new NullPointerException("properties가 null이거나 processor.type키가 없습니다.");
+	public String getAdminId() {
+		if (properties == null || !properties.containsKey("admin.id")) {
+			throw new NullPointerException("properties가 null이거나 admin.id키가 없습니다.");
 		}
-		return properties.get("manager.id").toString();
+		return properties.get("admin.id").toString();
 	}
 
-	public String getManagerPwd() {
-		if (properties == null || !properties.containsKey("manager.passwd")) {
-			throw new NullPointerException("properties가 null이거나 manager.passwd키가 없습니다.");
+	public String getAdminPwd() {
+		if (properties == null || !properties.containsKey("admin.passwd")) {
+			throw new NullPointerException("properties가 null이거나 admin.passwd키가 없습니다.");
 		}
-		return properties.get("manager.passwd").toString();
+		return properties.get("admin.passwd").toString();
 	}
 }

@@ -15,7 +15,7 @@ public class HibernateConnectionFactory {
 	private static ServiceRegistry serviceRegistry;
 
 	static {
-		String path = "D:/eclipse_workspace/HelloJSP/src/main/resources/hibernate.cfg.xml";
+		String path = "D:/eclipse_workspace/HelloServlet/src/main/resources/hibernate.cfg.xml";
 		Configuration configuration = new Configuration().configure(new File(path));
 		configuration.addAnnotatedClass(Admin.class);
 		configuration.addAnnotatedClass(User.class);

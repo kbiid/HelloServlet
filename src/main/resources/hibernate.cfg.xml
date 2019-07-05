@@ -43,6 +43,7 @@
 		<property name="use_sql_comments">false</property>
 
 		<!-- Table Class -->
-		<mapping class="kr.co.torpedo.dataprocessor.domain.User" />
+		<mapping class="kr.co.torpedo.helloservlet.domain.User" />
+		<mapping class="kr.co.torpedo.helloservlet.domain.Admin" />
 	</session-factory>
 </hibernate-configuration>

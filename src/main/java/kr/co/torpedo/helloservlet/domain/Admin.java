@@ -16,7 +16,7 @@ public class Admin {
 	@Column(name = "id", columnDefinition = "varchar(100)")
 	private String id;
 	@Column(name = "passwd", columnDefinition = "varchar(100)")
-	private String pwd;
+	private String passwd;
 
 	public String getId() {
 		return id;
@@ -26,16 +26,16 @@ public class Admin {
 		this.id = id;
 	}
 
-	public String getPwd() {
-		return pwd;
+	public String getPasswd() {
+		return passwd;
 	}
 
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
+	public void setPasswd(String pwd) {
+		this.passwd = pwd;
 	}
 
 	public boolean checkAdmin(String id, String passwd) throws NoSuchAlgorithmException {
-		if (!this.id.equals(id) || !BCrypt.checkpw(passwd, pwd)) {
+		if (!this.id.equals(id) || !BCrypt.checkpw(passwd, passwd)) {
 			return false;
 		}
 		return true;

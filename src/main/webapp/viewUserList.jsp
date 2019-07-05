@@ -5,9 +5,6 @@
 <%@page import="kr.co.torpedo.helloservlet.domain.User"%>
 <jsp:useBean id="repository"
 	class="kr.co.torpedo.helloservlet.repository.hibernate.HibernateRepository" />
-<%
-//	List<User> userList = repository.selectUserList();
-%>
 <!DOCTYPE html>
 <html>
 <head>

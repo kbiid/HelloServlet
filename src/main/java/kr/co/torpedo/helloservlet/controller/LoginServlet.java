@@ -46,7 +46,7 @@ public class LoginServlet extends HttpServlet {
 			dispatcher.forward(req, resp);
 		} else {
 			try {
-				boolean check = manager.checkAdmin(id, pwd);
+				boolean check = manager.checkAdminInfo(id, pwd);
 				if (check) { // 로그인 성공
 					req.setAttribute("userList", repository.selectUserList());
 					dispatcher = req.getRequestDispatcher("/viewUserList.jsp");

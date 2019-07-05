@@ -34,7 +34,7 @@ public class Admin {
 		this.passwd = pwd;
 	}
 
-	public boolean checkAdmin(String id, String passwd) throws NoSuchAlgorithmException {
+	public boolean checkAdminInfo(String id, String passwd) throws NoSuchAlgorithmException {
 		if (!this.id.equals(id) || !BCrypt.checkpw(passwd, passwd)) {
 			return false;
 		}

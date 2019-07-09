@@ -68,11 +68,11 @@ body {
 			%>
 			<tr>
 				<td><%=user.getId()%></td>
-				<td><%=user.getFirst_name()%></td>
-				<td><%=user.getLast_name()%></td>
+				<td><%=user.getFirstName()%></td>
+				<td><%=user.getLastName()%></td>
 				<td><%=user.getEmail()%></td>
 				<td><%=user.getGender()%></td>
-				<td><%=user.getIp_address()%></td>
+				<td><%=user.getIpAddress()%></td>
 			</tr>
 			<%
 				}

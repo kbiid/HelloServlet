@@ -12,26 +12,26 @@ public class User {
 	@Column(name = "id", columnDefinition = "int")
 	private int id;
 	@Column(name = "first_name", columnDefinition = "varchar(100)")
-	private String first_name;
+	private String firstName;
 	@Column(name = "last_name", columnDefinition = "varchar(100)")
-	private String last_name;
+	private String lastName;
 	@Column(name = "email", columnDefinition = "varchar(200)")
 	private String email;
 	@Column(name = "gender", columnDefinition = "varchar(200)")
 	private String gender;
 	@Column(name = "ip_address", columnDefinition = "varchar(200)")
-	private String ip_address;
+	private String ipAddress;
 
 	public User() {
 	}
 
-	public User(int id, String first_name, String last_name, String email, String gender, String ip_address) {
+	public User(int id, String firstName, String lastName, String email, String gender, String ipAddress) {
 		this.id = id;
-		this.first_name = first_name;
-		this.last_name = last_name;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.email = email;
 		this.gender = gender;
-		this.ip_address = ip_address;
+		this.ipAddress = ipAddress;
 	}
 
 	public int getId() {
@@ -42,20 +42,20 @@ public class User {
 		this.id = id;
 	}
 
-	public String getFirst_name() {
-		return first_name;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setFirst_name(String first_name) {
-		this.first_name = first_name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public String getLast_name() {
-		return last_name;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setLast_name(String last_name) {
-		this.last_name = last_name;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public String getEmail() {
@@ -74,11 +74,11 @@ public class User {
 		this.gender = gender;
 	}
 
-	public String getIp_address() {
-		return ip_address;
+	public String getIpAddress() {
+		return ipAddress;
 	}
 
-	public void setIp_address(String ip_address) {
-		this.ip_address = ip_address;
+	public void setIpAddress(String ipAddress) {
+		this.ipAddress = ipAddress;
 	}
 }

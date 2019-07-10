@@ -1,5 +1,7 @@
 package kr.co.torpedo.helloservlet.domain;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -21,17 +23,20 @@ public class User {
 	private String gender;
 	@Column(name = "ip_address", columnDefinition = "varchar(200)")
 	private String ipAddress;
+	@Column(name = "date", columnDefinition = "date")
+	private Date date;
 
 	public User() {
 	}
 
-	public User(int id, String firstName, String lastName, String email, String gender, String ipAddress) {
+	public User(int id, String firstName, String lastName, String email, String gender, String ipAddress, Date date) {
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.gender = gender;
 		this.ipAddress = ipAddress;
+		this.date = date;
 	}
 
 	public int getId() {
@@ -80,5 +85,13 @@ public class User {
 
 	public void setIpAddress(String ipAddress) {
 		this.ipAddress = ipAddress;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
 }

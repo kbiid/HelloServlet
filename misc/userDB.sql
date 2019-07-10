@@ -5,6 +5,7 @@ create table user (
 	email varchar(200) not null,
 	gender varchar(100) not null,
 	ip_address varchar(100) not null,
+	date date not null,
 	
 	constraint user_PK primary key(id)
 );
